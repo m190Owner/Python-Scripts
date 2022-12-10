@@ -10,36 +10,22 @@ if ctypes.windll.shell32.IsUserAnAdmin() == 0:
     ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, " ".join(sys.argv), None, 1)
     sys.exit(0)
 
-# Check if Git, pip, and Python are already installed
+# Check if Git is already installed
 git_installed = shutil.which("git") is not None
-pip_installed = shutil.which("pip") is not None
-python_installed = shutil.which("python") is not None
 
-# Install Git, pip, and Python using winget if they are not already installed
+# Install Git using winget if they are not already installed
 if not git_installed:
     subprocess.call(["winget", "install", "git"])
 
-if not pip_installed:
-    subprocess.call(["winget", "install", "pip"])
+# Clone the lively wallpaper repository from GitHub and install the package
+try:
+    subprocess.call(["git", "clone", "https://github.com/rocksdanister/lively"])
+    os.chdir("lively")
+    subprocess.call(["git", "install", "."])
 
-if not python_installed:
-    subprocess.call(["winget", "install", "python"])
-
-# Check if lively wallpaper is already installed
-lively_installed = shutil.which("lively-wallpaper") is not None
-
-# Delete the existing lively wallpaper installation if it is already installed
-if lively_installed:
-    subprocess.call(["pip", "uninstall", "-y", "lively-wallpaper"])
-
-# Clone the lively wallpaper repository from GitHub
-subprocess.call(["git", "clone", "https://github.com/rocksdanister/lively"])
-
-# Change the current working directory to the cloned repository
-os.chdir("lively")
-
-# Install the lively wallpaper using pip
-subprocess.call(["pip", "install", "."])
+# Handle any exceptions that may be raised by the git clone or git install commands
+except Exception as e:
+    print(f"An error occurred while installing lively wallpaper: {e}")
 
 # Use lively wallpaper to set the desktop background
 subprocess.call(["lively-wallpaper"])
