@@ -13,7 +13,7 @@ if ctypes.windll.shell32.IsUserAnAdmin() == 0:
 # Check if Git is already installed
 git_installed = shutil.which("git") is not None
 
-# Install Git using winget if they are not already installed
+# Install Git using winget if it is not already installed
 if not git_installed:
     subprocess.call(["winget", "install", "git"])
 
