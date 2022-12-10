@@ -1,7 +1,7 @@
-# pythonscripts
-some of my python scripts
+#Python Scripts
 
+some of my python scripts.
 
-I have been bored and mainly messing around with discord webhooks and python.
+Will add more as I keep going.
 
 
