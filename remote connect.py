@@ -1,3 +1,8 @@
+#To use this script, you will need to have the paramiko library installed on your system. You can install it using pip: pip install paramiko
+#You can then run the script using the following command: python ssh_remote_connect.py --host <hostname or IP address of the remote computer> --username <username> [--password <password>] [--port <port number>]
+#Replace <hostname or IP address of the remote computer>, <username>, and <password> with the appropriate values for your setup. 
+#The --password argument is optional, and you will be prompted to enter the password if it is not provided. The --port argument is also optional, and it defaults to
+
 #!/usr/bin/env python
 
 import argparse
