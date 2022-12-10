@@ -1,3 +1,5 @@
+#open a web browser navigate to website download a file save to end user's PC
+
 # Import the necessary libraries
 import webbrowser
 import requests
